@@ -1,3 +1,4 @@
 image: ubuntu
 
-build: docker build -t manylinux-x64 .
+build:
+  - sh: docker build -t manylinux-x64 .
