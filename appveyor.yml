@@ -1,4 +1,17 @@
 image: ubuntu
 
+before_build:
+  - sh: docker login --username=$DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
+
 build_script:
-  - sh: docker build -t manylinux-x64 .
+  - sh: docker build -t safijari/manylinux-x64:latest .
+
+deploy_script:
+  - sh: docker push safijari/manylinux-x64
+
+notifications:
+  - provider: Email
+  - to:
+      - $APPVEYOR_REPO_COMMIT_AUTHOR_EMAIL
+    on_build_status_changed: true
+
