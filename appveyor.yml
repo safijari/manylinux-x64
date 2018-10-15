@@ -1,7 +1,7 @@
 image: ubuntu
 
 before_build:
-  - sh: docker login --username=$DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
+  - sh: docker login --username=$DOCKERHUB_USER --password $DOCKERHUB_PASS
 
 build_script:
   - sh: docker build -t safijari/manylinux-x64:latest .
