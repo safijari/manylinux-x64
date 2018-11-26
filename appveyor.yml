@@ -1,5 +1,8 @@
 image: ubuntu
 
+services: 
+- docker
+
 environment:
   DOCKERHUB_PASS:
     secure: A66kPtpxEo0Ts8gLOnx6+y1ls7PXU8tlMZRm1ju+oio=
