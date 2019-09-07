@@ -16,3 +16,9 @@ RUN curl -L -o opencv.zip https://github.com/opencv/opencv/archive/3.4.3.zip && 
 RUN cd opencv-3.4.3 && mkdir build && cd build && \
     cmake -D WITH_TBB=ON -D WITH_OPENMP=ON -D WITH_IPP=ON -D CMAKE_BUILD_TYPE=RELEASE -D BUILD_EXAMPLES=OFF -D BUILD_DOCS=OFF -D BUILD_PERF_TESTS=OFF -D BUILD_TESTS=OFF -D WITH_CSTRIPES=ON -D WITH_OPENCL=ON CMAKE_INSTALL_PREFIX=/usr/local/ .. && \
     make && make install
+
+RUN yum install openblas-devel -y
+
+RUN yum install lapack-devel -y
+
+RUN yum install suitesparse-devel -y
