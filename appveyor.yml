@@ -14,7 +14,7 @@ build_script:
   - sh: docker build -t safijari/manylinux-x64:latest .
 
 deploy_script:
-  - sh: docker push safijari/manylinux-x64
+  - sh: docker push safijari/manylinux2010-x64
 
 notifications:
   - provider: Email

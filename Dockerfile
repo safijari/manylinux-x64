@@ -1,4 +1,4 @@
-FROM dockcross/manylinux-x64
+FROM dockcross/manylinux2010-x64
 
 # "Install" Eigen
 RUN git clone --progress --verbose https://github.com/eigenteam/eigen-git-mirror.git \
@@ -22,3 +22,19 @@ RUN yum install openblas-devel -y
 RUN yum install lapack-devel -y
 
 RUN yum install suitesparse-devel -y
+
+# RUN git clone https://github.com/jluttine/suitesparse.git \
+#     && cd suitesparse \
+#     && make metisinstall \
+#     && cd SuiteSparse_config make install && cd ..\
+#     && cd CXSparse && make install && cd ..\
+#     && cd AMD && make install && cd ..\
+#     && cd COLAMD && make install && cd ..\
+#     && cd CCOLAMD && make install && cd ..\
+#     && cd CAMD && make install && cd ..\
+#     && cd CHOLMOD && make install && cd ..\
+
+# RUN git clone https://github.com/jluttine/suitesparse.git \
+#     && cd suitesparse && make
+
+# RUN cd suitesparse && make install INSTALL=/usr/
