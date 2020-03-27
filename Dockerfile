@@ -3,7 +3,7 @@ FROM dockcross/manylinux2010-x64
 RUN yum install qt5-qtbase -y
 
 RUN git clone https://gitlab.com/libeigen/eigen.git && cd eigen && git checkout 3.3.4 && cd .. \
-    && rm -r /usr/include/Eigen/ && cd eigen && mkdir build && cd build && cmake .. && make install
+    && mkdir build && cd build && cmake .. && make install
 
 # Build and install Boost  
 RUN curl -L -o boost.tar.bz2 https://sourceforge.net/projects/boost/files/boost/1.61.0/boost_1_61_0.tar.bz2
