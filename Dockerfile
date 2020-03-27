@@ -2,7 +2,7 @@ FROM dockcross/manylinux2010-x64
 
 RUN yum install qt5-qtbase -y
 
-RUN git clone https://gitlab.com/libeigen/eigen.git && cd eigen && git checkout 3.3.4 && cd .. \
+RUN git clone https://gitlab.com/libeigen/eigen.git && cd eigen && git checkout 3.3.4 \
     && mkdir build && cd build && cmake .. && make install
 
 # Build and install Boost  
