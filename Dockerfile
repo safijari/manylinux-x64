@@ -28,4 +28,4 @@ RUN yum install qt5-qtbase-devel -y
 
 RUN yum install freeglut-devel -y
 
-RUN yum install mesa-libOSMesa -y
+RUN yum install mesa-libOSMesa-devel -y
