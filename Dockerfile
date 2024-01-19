@@ -24,9 +24,4 @@ RUN yum install freeglut-devel -y
 
 RUN yum install mesa-libOSMesa-devel -y
 
-# Build and install opencv
-RUN curl -L -o opencv.zip https://github.com/opencv/opencv/archive/4.9.0.zip && \
-    unzip opencv.zip
-RUN cd opencv-4.9.0 && mkdir build && cd build && \
-    cmake CMAKE_CXX_FLAGS="-Wno-error" -D WITH_TBB=ON -D WITH_OPENMP=ON -D WITH_IPP=ON -D CMAKE_BUILD_TYPE=RELEASE -D BUILD_EXAMPLES=OFF -D BUILD_DOCS=OFF -D BUILD_PERF_TESTS=OFF -D BUILD_TESTS=OFF -D WITH_CSTRIPES=ON -D WITH_OPENCL=ON CMAKE_INSTALL_PREFIX=/usr/local/ .. && \
-    make && make install
+RUN yum install opencv-devel -y
