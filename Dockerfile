@@ -1,5 +1,4 @@
 FROM dockcross/manylinux_2_28-x64
-FROM dockcross/manylinux_2_28-x64	
 
 RUN yum install qt5-qtbase -y
 
