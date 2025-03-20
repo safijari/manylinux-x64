@@ -30,6 +30,6 @@ jobs:
       - name: Build and push Docker image
         run: |
           TAG="safijari/manylinux_2_28:${{ matrix.architecture }}"
-          docker buildx build --platform linux/${{ matrix.architecture }} -t $TAG -f Dockerfile .
+          docker buildx build --platform linux/${{ matrix.architecture }} -t $TAG -f Dockerfile.${{ matrix.architecture }} .
           docker push $TAG
 
